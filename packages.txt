@@ -1,1 +1,1 @@
-imagemagick=8:6.9.10.23+dfsg-2.1ubuntu13
+imagemagick:6.9.7.4
