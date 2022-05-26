@@ -2,4 +2,3 @@ protobuf~=3.19.0
 streamlit
 pdfplumber
 tqdm
-imagemagick
