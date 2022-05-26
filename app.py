@@ -103,7 +103,17 @@ def process_text(texts):
 
 
 def main():
-
+         
+    file = open('/etc/ImageMagick-6/policy.xml', 'r')
+    lines = file.readlines()
+    for i, line in enumerate(lines):
+        if line == '<policy domain="coder" rights="none" pattern="PDF" />':
+            break
+    lines[i] = '<policy domain="coder" rights="read|write" pattern="PDF" />'
+    file = open('/etc/ImageMagick-6/policy.xml', 'w')
+    file.writelines(lines)
+    file.close()
+         
     st.title("Invoice OCR demo")
     file_up = st.file_uploader("Upload a document", type="pdf")
 
